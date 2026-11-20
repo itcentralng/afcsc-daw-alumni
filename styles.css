@@ -1,0 +1,61 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #101d2c;
+  color: #f4f0e5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgb(33 60 81 / 72%), transparent 58%),
+    #101d2c;
+}
+
+.welcome {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  justify-items: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 2rem;
+  color: #d3b76d;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 1.25rem 0 0;
+  color: #d3b76d;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.status {
+  margin: 4rem 0 0;
+  color: #c1cbd2;
+  font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+}
