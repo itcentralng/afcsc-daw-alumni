@@ -4,11 +4,10 @@ setlocal
 rem Run once on the kiosk PC to create a Desktop shortcut.
 set "SCRIPT_DIR=%~dp0"
 set "TARGET_BAT=%SCRIPT_DIR%run.bat"
-set "SHORTCUT_NAME=DAW Alumni.lnk"
+set "SHORTCUT_NAME=Alumni - SK Aneke Hall of Fame.lnk"
 set "SHORTCUT_PATH=%USERPROFILE%\Desktop\%SHORTCUT_NAME%"
 set "VBS_PATH=%TEMP%\daw_alumni_shortcut.vbs"
-set "EDGE=C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-if not exist "%EDGE%" set "EDGE=C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+set "APP_ICON=%SCRIPT_DIR%assets\icons\app.ico"
 
 if not exist "%TARGET_BAT%" (
   echo.
@@ -19,15 +18,18 @@ if not exist "%TARGET_BAT%" (
   exit /b 1
 )
 
-echo Creating a Desktop shortcut for DAW Alumni...
+del "%USERPROFILE%\Desktop\DAW Alumni.lnk" >nul 2>&1
+del "%USERPROFILE%\Desktop\SK Aneke Hall of Fame - Alumni.lnk" >nul 2>&1
+
+echo Creating a Desktop shortcut for Alumni - SK Aneke Hall of Fame...
 > "%VBS_PATH%" echo Set oWS = WScript.CreateObject("WScript.Shell")
 >> "%VBS_PATH%" echo Set oLink = oWS.CreateShortcut("%SHORTCUT_PATH%")
 >> "%VBS_PATH%" echo oLink.TargetPath = "%COMSPEC%"
 >> "%VBS_PATH%" echo oLink.Arguments = "/C ""%TARGET_BAT%"""
 >> "%VBS_PATH%" echo oLink.WorkingDirectory = "%SCRIPT_DIR%"
 >> "%VBS_PATH%" echo oLink.WindowStyle = 7
->> "%VBS_PATH%" echo oLink.IconLocation = "%EDGE%"
->> "%VBS_PATH%" echo oLink.Description = "Launch the Department of Air Warfare alumni kiosk"
+>> "%VBS_PATH%" echo oLink.IconLocation = "%APP_ICON%"
+>> "%VBS_PATH%" echo oLink.Description = "Launch Alumni, the SK Aneke Hall of Fame kiosk"
 >> "%VBS_PATH%" echo oLink.Save
 
 cscript //nologo "%VBS_PATH%"

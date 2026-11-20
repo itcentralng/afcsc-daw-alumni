@@ -1,8 +1,10 @@
-# DAW Alumni
+# Alumni
 
-A blank, offline kiosk shell for the Department of Air Warfare alumni screen.
-The screen currently shows a simple placeholder; alumni content can be added
-as it is prepared.
+**SK Aneke Hall of Fame · Department of Air Warfare · Armed Forces Command and Staff College, Nigeria**
+
+A blank, offline kiosk shell for the Alumni section of the Department of Air
+Warfare Hall of Fame. The screen currently shows a simple placeholder; alumni
+content can be added as it is prepared.
 
 ## Running on the kiosk
 
@@ -18,6 +20,7 @@ For development, open `index.html` in any modern browser.
 ```
 index.html       the placeholder alumni screen
 styles.css       kiosk layout and appearance
+assets/icons/    Nigerian Air Force app icon
 run.bat          opens the screen in Edge kiosk mode
 prepare.bat      creates a Desktop shortcut
 update.bat       fetches and applies updates from GitHub
